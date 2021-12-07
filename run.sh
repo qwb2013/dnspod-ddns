@@ -10,6 +10,8 @@ DNSPOD_DOMAIN=example.com
 DNSPOD_SUBDOMAIN=example
 # 你的邮箱
 DNSPOD_EMAIL=example@example.com
+DNSIP_A=192.168.6.101
+DNSIP_B=192.168.6.102
 
 docker run --name=ddns --restart=always -d \
     -e DNSPOD_ID=${DNSPOD_ID} \
@@ -17,4 +19,6 @@ docker run --name=ddns --restart=always -d \
     -e DNSPOD_DOMAIN=${DNSPOD_DOMAIN} \
     -e DNSPOD_SUBDOMAIN=${DNSPOD_SUBDOMAIN} \
     -e DNSPOD_EMAIL=${DNSPOD_EMAIL} \
+    -e DNSIP_A=${DNSIP_A} \
+    -e DNSIP_B=${DNSIP_B} \
     scofieldpeng/dnspod-ddns:1.0.0
